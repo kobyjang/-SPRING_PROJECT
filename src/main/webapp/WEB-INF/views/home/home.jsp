@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-시작
+<jsp:include page="header.jsp" />
+<div align="center">
+	<div><h1>WellCome to my Web-site</h1></div>
+
+</div>
 </body>
 </html>
