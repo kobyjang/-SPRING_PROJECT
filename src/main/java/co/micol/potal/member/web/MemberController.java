@@ -30,7 +30,7 @@ public class MemberController {
 			session.setAttribute("author", vo.getAuthor());
 			model.addAttribute("message","님 환영합니다.");
 		}else {
-			model.addAttribute("message","아이디 똔느 패스워드가 틀렸습니다.");
+			model.addAttribute("message","아이디 또는 패스워드가 틀렸습니다.");
 		}
 		return "member/memberLoginResult";
 	}

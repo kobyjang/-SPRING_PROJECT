@@ -7,7 +7,7 @@
 <title>로그인</title>
 </head>
 <body>
-<jsp:include page="../home/header.jsp"/>
+<jsp:include page="../home/menu.jsp"/>
 <div align="center">
 	<div><h1>로 그 인 </h1></div>
 	<div>
