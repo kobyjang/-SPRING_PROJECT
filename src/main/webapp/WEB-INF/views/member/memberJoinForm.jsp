@@ -12,7 +12,7 @@
 <div align="center">
 	<div><h1>회 원 가 입</h1></div>
 	<div>
-		<form id="frm" action="memberJoin.do" method="post" onsubmit="return formCheck()">
+		<form id="frm" action="memberJoin.do" method="post" onsubmit="return formCheck()" enctype="multipart/form-data">
 			<div>
 				<table border="1">
 					<tr>
@@ -50,6 +50,12 @@
 						<th width="150">주소</th>
 						<td colspan="3" width="300" >
 							<input type="text" size="70" id="address" name="address" placeholder="Your address...">
+						</td>
+					</tr>
+					<tr>
+						<th width="150">사 진</th>
+						<td colspan="3" width="450" >
+							<input type="file" id="file"name="file">
 						</td>
 					</tr>	
 				</table>

@@ -3,7 +3,8 @@
 <mapper namespace="co.micol.potal.member.service.MemberMapper">
    
    <select id="memberSelectList"    
-      parameterType="co.micol.potal.member.service.MemberVO">
+      parameterType="co.micol.potal.member.service.MemberVO"
+      resultType="co.micol.potal.member.service.MemberVO">
       SELECT * FROM MEMBER
       </select>
    
@@ -18,8 +19,8 @@
    </select>
    
    <insert id="memberInsert" parameterType="co.micol.potal.member.service.MemberVO">
-      INSERT INTO MEMBER(ID, PASSWORD, NAME, TEL, ADDRESS)
-      VALUES(#{id}, #{password}, #{name}, #{tel}, #{address})
+      INSERT INTO MEMBER(ID, PASSWORD, NAME, TEL, ADDRESS, IMGFILE, PIMGFILE)
+      VALUES(#{id}, #{password}, #{name}, #{tel}, #{address}, #{imgFile}, #{pimgFile})
    </insert>
    
    <update id="memberUpdate" parameterType="co.micol.potal.member.service.MemberVO">
@@ -29,6 +30,10 @@
       <if test="tel != null"> SET TEL = #{tel}</if>
       <if test="address != null"> SET ADDRESS = #{address}</if>
       <if test="author != null"> SET AUTHOR = #{author}</if>
+      <if test="author != null"> SET IMGFILE = #{imgFile}</if>
+      <if test="author != null"> SET PIMGFILE = #{pimgFile}</if>
+      
+      
       WHERE ID = #{id}
    </update>
    
