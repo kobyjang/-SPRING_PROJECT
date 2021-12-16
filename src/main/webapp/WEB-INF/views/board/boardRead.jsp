@@ -37,8 +37,13 @@
 			</div><br>
 			<div>
 				<button type="button" onclick="location.href='noticeList.do'">목록가기</button>&nbsp;&nbsp;
-				<button type="button" onclick="">글 수정</button>&nbsp;&nbsp;
-				<button type="button" onclick="">글 삭제</button>
+				<c:if test="${id eq board.writer }">
+					<button type="button" onclick="">글 수정</button>&nbsp;&nbsp;
+					<button type="button" onclick="">글 삭제</button>
+				</c:if>
+				<c:if test="${author eq 'ADMIN' }">
+					<button type="button" onclick="">글 삭제</button>
+				</c:if>
 			</div>
 		</c:if>
 		<c:if test="${message != null }">

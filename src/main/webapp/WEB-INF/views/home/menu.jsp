@@ -28,8 +28,9 @@
 	                <li><a href="#">Product</a></li>
 	                <li><a href="#">Service</a></li>
 	            </c:if>
-	              <c:if test="${id eq null }">
-					 <li><a href="noticeList.do">Notice</a></li>
+	            	<c:if test="${id eq null }">
+	                	<li><a href="memberJoinForm.do">MemberJoin</a></li>
+						<li><a href="noticeList.do">Notice</a></li>
 					</c:if>
 				<c:if test="${author eq 'ADMIN' }">
 	                <li><a href="#about">Members</a></li>
