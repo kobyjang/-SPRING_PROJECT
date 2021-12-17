@@ -5,7 +5,7 @@
    <select id="boardSelectList" resultType="co.micol.potal.board.service.BoardVO">
       SELECT B.*, M.NAME 
       FROM BOARD B, MEMBER M
-      WHERE B.WRITER = M.ID 
+      WHERE B.WRITER = M.ID ORDER BY B.NO DESC
    </select>
    
    
@@ -42,8 +42,16 @@
       <if test="key eq null"> AND 1 = 1</if>
       <if test="key.equals('title')"> AND TITLE LIKE '%' || #{val} || '%'</if>
       <if test="key.equals('subject')"> AND SUBJECT LIKE '%' || #{val} || '%'</if>
-      <if test="key.equals('wdate')"> AND WDATE = #{val}</if>
+      <if test="key.equals('wdate')"> AND TO_CHAR(WDATE,'YYYY-MM-DD') = #{val}</if>
    </select>
+   
+   <update id="boardNoupdate"  parameterType="int">
+   UPDATE BOARD SET NO = NO -1
+   <![CDATA[
+   	WHERE NO > #{no}
+   ]]>
+   </update>
+   
 	<update id="boardHit" parameterType="int">
 		UPDATE BOARD SET HIT = HIT +1 WHERE NO = #{n}
 	</update>

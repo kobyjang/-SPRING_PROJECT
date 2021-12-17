@@ -30,19 +30,18 @@
 					<tr>
 						<th>내 용</th>
 						<td colspan="5">
-							<textarea rows="10" cols="80">${board.subject}</textarea>
+							<textarea readonly rows="10" cols="80">${board.subject}</textarea>
 						</td>
 					</tr>
 				</table>
 			</div><br>
 			<div>
 				<button type="button" onclick="location.href='noticeList.do'">목록가기</button>&nbsp;&nbsp;
-				<c:if test="${id eq board.writer }">
-					<button type="button" onclick="">글 수정</button>&nbsp;&nbsp;
-					<button type="button" onclick="">글 삭제</button>
-				</c:if>
-				<c:if test="${author eq 'ADMIN' }">
-					<button type="button" onclick="">글 삭제</button>
+				<c:if test="${author eq 'ADMIN' || id eq board.writer}">
+					<c:if test="${id eq board.writer}">
+						<button type="button" onclick="updateFuntion(${board.no})">글 수정</button>&nbsp;&nbsp;
+					</c:if>				
+					<button type="button" onclick="deleteFuntion(${board.no})">글 삭제</button>
 				</c:if>
 			</div>
 		</c:if>
@@ -50,7 +49,25 @@
 			<div><h1>${message }</h1></div>
 			<button type="button" onclick="location.href='noticeList.do'">목록가기</button>
 		</c:if>
+		<div>
+		<form id="frm" method="post">
+			<input type="hidden" name="no">
+		</form>
+		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function deleteFuntion(no) {
+		frm.no.value = no;
+		frm.action = "boardDelete.do";
+		frm.submit();
+	}
+	
+	function updateFuntion(no) {
+		frm.no.value = no;
+		frm.action = "boardUpdateForm.do";
+		frm.submit();
+	}	
+</script>
 </body>
 </html>
