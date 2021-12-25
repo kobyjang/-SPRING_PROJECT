@@ -1,8 +1,16 @@
 package co.micol.potal.member.service;
 
 public class MemberVO {
-	private  String id;
-	private  String password;
+	private String id;
+	private String password;
+	private String name;
+	private String tel;
+	private String address;
+	private String author;
+	
+	public MemberVO()	{}
+	
+
 	public String getId() {
 		return id;
 	}
@@ -35,12 +43,12 @@ public class MemberVO {
 		this.tel = tel;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getAuthor() {
@@ -49,13 +57,5 @@ public class MemberVO {
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-
-	private  String name;
-	private  String tel;
-	private  String adress;
-	private  String author;
-	
-	public MemberVO() {
 	}
 }
