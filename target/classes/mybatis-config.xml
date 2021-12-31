@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ <configuration>
+ <!-- VO 객체에서 널값이 들어오면 value를 NULL로 인식, 안하면 에러(javaNullPointerException -->
+ 	<settings>
+ 		<setting name="cacheEnabled" value="false"/>
+ 		<setting name="jdbcTypeForNull" value="NULL"/>
+ 	</settings>
+ </configuration>
