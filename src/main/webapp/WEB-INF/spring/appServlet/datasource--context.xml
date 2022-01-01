@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring" xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!--  DBCP -->
@@ -12,17 +9,17 @@
 		<property name="username" value="koby" />
 		<property name="password" value="1234" />
 	</bean>
-	
+
 	<!-- Mybatis -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="configLocation" value="classpath:mybatis-config.xml"></property><!--  src/main/resourc를 지정함  -> classpath -->
-		<property name="mapperLocations" value="classpath*:/co/micol/potal/**/service/*-map.xml"></property><!--  src/main/jaca를 지정함  -> classpath* -->
-	</bean>
-	
-	<bean class="org.mybatis.spring.SqlSessionTemplate"  id="sqlSessionTemplate">
-		<constructor-arg ref="sqlSessionFactoryBean"/>
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property> <!--  src/main/resourc를 지정함  -> classpath -->
+		<property name="mapperLocations" value="classpath*:/co/micol/potal/**/service/*-map.xml"></property> <!--  src/main/jaca를 지정함  -> classpath* -->
 	</bean>
 
-	<mybatis-spring:scan base-package="co.micol.potal"/>
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean" />
+	</bean>
+
+	<mybatis-spring:scan base-package="co.micol.potal" />
 </beans>
