@@ -1,4 +1,4 @@
-# -SPRING_PROJECT
+# SPRING_PROJECT
 [장종민 이력서 포트폴리오.pptx](https://github.com/kobyjang/-SPRING_PROJECT/files/7796415/default.pptx)
 
 ![Spring](https://user-images.githubusercontent.com/91588946/147828126-4de89d37-a76e-430e-ace0-f8d0e872d25d.jpg)
